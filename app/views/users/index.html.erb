@@ -1,0 +1,10 @@
+<% @users.each do |user| %>
+    <p>
+      <a href=<%= user_path user.id %>><%= user.id %></a>.
+      <%= "#{user.username} => #{user.age} => #{user.email} => #{user.city}" %>
+
+
+      <%= button_to :delete, user_path(user.id), method: :delete %>
+
+    </p>
+<% end %>

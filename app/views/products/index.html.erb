@@ -1,0 +1,11 @@
+<h1>Products#index</h1>
+
+<% @products.each do |product| %>
+    <p>
+      <a href=<%= product_path product.id %>><%= product.id %></a>.
+      <%= "#{product.title} => #{product.description} => #{product.price}" %>
+
+      <%= button_to :delete, product_path(product.id), method: :delete %>
+
+    </p>
+<% end %>

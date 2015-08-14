@@ -1,0 +1,7 @@
+<h1>Users#create</h1>
+
+<% @user.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+<% end %>
+
+<span><%= "Bir daha olusturmak icin " %></span><a href=<%= new_user_path %>><%= "buraya" %></a><span><%= " tiklayin" %></span>

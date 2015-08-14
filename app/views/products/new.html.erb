@@ -1,0 +1,14 @@
+<h1 style="color: red">NEW</h1>
+
+<%= form_for :product, url: products_path do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Products#create</h1>
+
+<% @product.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+<% end %>
+
+<h3 style="text-decoration: underline">
+  <span><%= "Bir daha olusturmak icin " %></span>
+  <a href=<%= new_product_path %>><%= "buraya" %></a>
+  <span><%= " tiklayin" %></span>
+</h3>

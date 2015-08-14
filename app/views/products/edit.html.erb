@@ -1,0 +1,14 @@
+<p>Products#edit</p>
+
+<%= form_for :product, url: product_path, method: :put do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+
+    <%= f.submit %>
+<% end %>
