@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @products = Product.all.map {|p| p.title}
+    @users = User.all.map {|u| u.username}
   end
 
   def edit

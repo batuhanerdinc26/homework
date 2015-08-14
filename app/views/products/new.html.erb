@@ -1,14 +1,6 @@
 <h1 style="color: red">NEW</h1>
 
-<%= form_for :product, url: products_path do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<%= select_tag :products, options_for_select(@products, @products.first) %>
+<%= select_tag :users, options_for_select(@users, @users.first) %>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-
-    <%= f.submit %>
-<% end %>
+<%= button_to :deal, products_path %>

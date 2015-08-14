@@ -13,5 +13,5 @@ class User < ActiveRecord::Base
 
   validates :city, presence: true
 
-  has_many :products
+  belongs_to :product
 end
