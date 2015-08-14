@@ -10,5 +10,6 @@
     <%= f.label :price %>
     <%= f.text_field :price %>
 
+    <%= f.select :user_id, options_for_select(@users, @users.first) %>
     <%= f.submit %>
 <% end %>

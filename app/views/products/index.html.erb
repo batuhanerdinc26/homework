@@ -3,7 +3,7 @@
 <% @products.each do |product| %>
     <p>
       <a href=<%= product_path product.id %>><%= product.id %></a>.
-      <%= "#{product.title} => #{product.description} => #{product.price}" %>
+      <%= "#{product.title} => #{product.description} => #{product.price} => user: #{product.user_id}" %>
 
       <%= button_to :delete, product_path(product.id), method: :delete %>
 

@@ -5,24 +5,25 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @products = Product.all.map {|p| p.title}
-    @users = User.all.map {|u| u.username}
+    @users = User.all.map {|u| u.id}
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
+    @users = User.all.map {|u| u.id}
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
+    @title = @product.title
+    @price = @product.price
+    @description = @product.description
+    @user_id = User.find_by(id: @product.user_id).username
   end
 
   def create
-    product_params = params.require(:product).permit(:title,
-                                                     :description,
-                                                     :price)
-
-    @product = Product.new(product_params)
+    deal_params = params.require(:deal).permit(:title, :description, :price, :user_id)
+    @product = Product.new(deal_params)
 
     redirect_to products_path if @product.save
   end
@@ -30,14 +31,15 @@ class ProductsController < ApplicationController
   def update
     product_params = params.require(:product).permit(:title,
                                                      :description,
-                                                     :price)
+                                                     :price,
+                                                     :user_id)
 
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
     @product.update(product_params)
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
     redirect_to products_path if @product.destroy
   end
 end
