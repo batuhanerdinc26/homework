@@ -1,0 +1,17 @@
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :description %>
+<%= f.text_area :description %>
+
+<%= f.label :price %>
+<%= f.text_field :price, id: :price %>
+<%= f.hidden_field :vat, id: :vat %>
+<%= f.label '0.00' , id: :vat_included_price %>
+
+<%= f.collection_select(:user_id,
+                        @users,
+                        :id,
+                        :username) %>
+
+<%= f.submit %>

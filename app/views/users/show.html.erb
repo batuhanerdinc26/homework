@@ -2,6 +2,9 @@
 
 <%= render @user %>
 
-<p><% @user.products.each do |product| %></p>
-      <%= render product %>
-  <% end %>
+<% @user.products.each do |product| %>
+    <p><%= render product %></p>
+<% end %>
+
+<%= render 'redirect_to_all_users' %>
+<%= render 'products/redirect_to_all_products' %>

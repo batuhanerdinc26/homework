@@ -1,19 +1,8 @@
 <h1 style="color: red">NEW</h1>
-
+<%= javascript_include_tag 'application', 'products' => true %>
+<%= javascript_include_tag 'application', 'jquery' => true %>
 
 <%= form_for :deal, url: products_path do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= render 'form', f: f %>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-
-    <%= f.collection_select(:user_id,
-                            @users,
-                            :id,
-                            :username) %>
-    <%= f.submit %>
 <% end %>
