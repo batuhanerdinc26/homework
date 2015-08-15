@@ -22,9 +22,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    deal_params = params.require(:deal).permit(:title, :description, :price, :user_id)
+    product_params = params.require(:product).permit(:title, :description, :price, :user_id)
 
-    @product = Product.new(deal_params)
+    @product = Product.new(product_params)
 
     redirect_to products_path if @product.save
   end
