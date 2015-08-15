@@ -1,3 +1,7 @@
 <h1>Users#show</h1>
 
-<h1><%= "#{@user.username} => #{@user.age} => #{@user.email} => #{@user.city}" %></h1>
+<%= render @user %>
+
+<p><% @user.products.each do |product| %></p>
+      <%= render product %>
+  <% end %>

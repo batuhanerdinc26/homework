@@ -1,3 +1,34 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+a {
+  color:red;
+  text-decoration: none;
+}
+
+.product {
+
+}
+
+.product_title {
+  font-size: 1.1em;  }
+
+.product_title a {
+  text-decoration: none;
+}
+
+
+.product_price {
+  font-weight: bold;
+  font-size: 1.3em;  }
+
+
+.product_edit {
+  border-radius: 0;  }
+
+
+.product_delete {
+
+}

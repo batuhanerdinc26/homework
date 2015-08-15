@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
             numericality: { greater_than: 15, only_integer: true }
 
   validates :city, presence: true
+
+  has_many :products
 end

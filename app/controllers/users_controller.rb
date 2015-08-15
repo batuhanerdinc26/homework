@@ -19,7 +19,8 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit(:username,
                                                :email,
                                                :age,
-                                               :city)
+                                               :city,
+                                               :user_id)
     @user = User.new(user_params)
 
     redirect_to users_path if @user.save
@@ -40,4 +41,5 @@ class UsersController < ApplicationController
 
     redirect_to users_path if @user.destroy
   end
+
 end

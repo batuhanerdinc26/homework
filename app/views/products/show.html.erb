@@ -1,3 +1,4 @@
 <p>Products#show</p>
 
-<h1><%= "#{@title} #{@description} #{@price} user:#{@user_id}" %></h1>
+<%= render @product %>
+<%= render 'owner', user: @user %>

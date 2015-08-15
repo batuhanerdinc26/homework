@@ -1,11 +1,16 @@
 <h1>Products#index</h1>
 
-<% @products.each do |product| %>
-    <p>
-      <a href=<%= product_path product.id %>><%= product.id %></a>.
-      <%= "#{product.title} => #{product.description} => #{product.price} => user: #{product.user_id}" %>
+Create <%= link_to "NEW", new_product_path %> <br>
 
-      <%= button_to :delete, product_path(product.id), method: :delete %>
+<% @products.each do |product| %>
+    <p class="product">
+
+      <%= render product %>
+
+      <%= render 'owner', user: product.user %>
+
+      <span class="product_edit"><%= button_to :edit, edit_product_path(product.id), method: :get %></span>
+      <span class="product_delete"><%= button_to :delete, product_path(product.id), method: :delete %></span>
 
     </p>
 <% end %>
