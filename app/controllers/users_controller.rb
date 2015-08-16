@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @users = User.all
+    @user.products.build
   end
 
   def show
@@ -20,7 +22,8 @@ class UsersController < ApplicationController
                                                :email,
                                                :age,
                                                :city,
-                                               :user_id)
+                                               :user_id,
+                                               products_attributes: [:title, :description, :price])
     @user = User.new(user_params)
 
     redirect_to users_path if @user.save

@@ -36,3 +36,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
+
+group :production do
+  #gems that work only in production
+end
